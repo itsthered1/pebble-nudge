@@ -1,0 +1,30 @@
+{
+    "targetPlatforms": [
+        "aplite", 
+        "basalt", 
+        "chalk", 
+        "diorite"
+    ], 
+    "displayName": "nudge", 
+    "name": "nudge", 
+    "messageKeys": {
+        "dummy": 10000
+    }, 
+    "companyName": "itsthered1", 
+    "enableMultiJS": true, 
+    "versionLabel": "1.0", 
+    "capabilities": [], 
+    "sdkVersion": "3", 
+    "appKeys": {
+        "dummy": 10000
+    }, 
+    "longName": "nudge", 
+    "shortName": "nudge", 
+    "watchapp": {
+        "watchface": false
+    }, 
+    "resources": {
+        "media": []
+    }, 
+    "uuid": "0381d240-4fed-48a4-ae07-a3cd4af5dffc"
+}
