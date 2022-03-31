@@ -1200,7 +1200,7 @@ LOAD /home/claudio/pebble-dev/pebble-sdk-4.6-rc2-linux64/arm-cs-tools/bin/../lib
  .note.gnu.build-id
                 0x0000000000000084       0x24 linker stubs
 
-.text           0x00000000000000a8      0x444
+.text           0x00000000000000a8      0x442
  *(.text)
  .text          0x00000000000000a8       0x14 /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
  *(.text.*)
@@ -1299,7 +1299,7 @@ LOAD /home/claudio/pebble-dev/pebble-sdk-4.6-rc2-linux64/arm-cs-tools/bin/../lib
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x0000000000000498       0x54 src/c/nudge.c.33.o
+                0x0000000000000498       0x52 src/c/nudge.c.33.o
 
 .glue_7         0x00000000000004ec        0x0
  .glue_7        0x0000000000000000        0x0 linker stubs
