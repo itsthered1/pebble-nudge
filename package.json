@@ -6,7 +6,7 @@
   "private": true,
   "dependencies": {},
   "pebble": {
-    "displayName": "nudge",
+    "displayName": "Nudge",
     "uuid": "0381d240-4fed-48a4-ae07-a3cd4af5dffc",
     "sdkVersion": "3",
     "enableMultiJS": true,

@@ -5,7 +5,7 @@
         "chalk", 
         "diorite"
     ], 
-    "displayName": "nudge", 
+    "displayName": "Nudge", 
     "name": "nudge", 
     "messageKeys": {
         "dummy": 10000
@@ -18,8 +18,8 @@
     "appKeys": {
         "dummy": 10000
     }, 
-    "longName": "nudge", 
-    "shortName": "nudge", 
+    "longName": "Nudge", 
+    "shortName": "Nudge", 
     "watchapp": {
         "watchface": false
     }, 

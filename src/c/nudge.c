@@ -2,11 +2,26 @@
 
 #define NUM_CONTACTS 3
 
+typedef enum {
+  MessageTypeEmoji,
+  MessageTypeCanned,
+  MessageTypeVoice,
+} MessageType;
+
+typedef struct {
+  MessageType type;
+} Context;
+
+static MessageType s_current_type;
+
 static Window *s_main_window;
 static MenuLayer *s_menu_layer;
+
 static ActionMenu *s_action_menu;
 static ActionMenuLevel *s_root_level, *s_emoji_layer;
 
+static DictationSession *s_dictation_session;
+static char s_last_text[512];
 
 static char emojis[80][10] = {
   "\U0001F601",
@@ -91,22 +106,40 @@ static char emojis[80][10] = {
   "\U0001F4A9"
 };
 
+static void dictation_session_callback(DictationSession *session, DictationSessionStatus status, char *transcription, void *context) {
+  APP_LOG(APP_LOG_LEVEL_INFO, "Dictation status: %d", (int)status);
+}
+
 static void action_performed_callback(ActionMenu *action_menu, const ActionMenuItem *action, void *context) {
-  //what
+  s_current_type = (MessageType)action_menu_item_get_action_data(action);
+
+  switch(s_current_type) {
+    case MessageTypeEmoji:
+      break;
+    case MessageTypeCanned:
+      break;
+    case MessageTypeVoice:
+      s_dictation_session = dictation_session_create(sizeof(s_last_text), dictation_session_callback, NULL);
+      dictation_session_start(s_dictation_session);
+      break;
+  }
 }
 
 static void init_action_menu() {
   s_root_level = action_menu_level_create(3);
 
-  action_menu_level_add_action(s_root_level, "Emojis", action_performed_callback, NULL);
-  action_menu_level_add_action(s_root_level, "Canned", action_performed_callback, NULL);
-  action_menu_level_add_action(s_root_level, "Voice", action_performed_callback, NULL);
-
   s_emoji_layer = action_menu_level_create(80);
-  action_menu_level_add_child(s_root_level, s_emoji_layer, "Emoji Select");
+  action_menu_level_add_child(s_root_level, s_emoji_layer, "Emoji");
   for (int i = 0; i < 80; i++) {
-    action_menu_level_add_action(s_emoji_layer, emojis[i], action_performed_callback, NULL);
+    action_menu_level_add_action(s_emoji_layer, emojis[i], action_performed_callback, (void *)MessageTypeEmoji);
   }
+
+  action_menu_level_add_action(s_root_level, "Canned", action_performed_callback, (void *)MessageTypeCanned);
+  
+#if defined(PBL_MICROPHONE)
+  action_menu_level_add_action(s_root_level, "Voice", action_performed_callback, (void *)MessageTypeVoice);
+#endif
+
 }
 
 static void select_click_handler(struct MenuLayer *menu_layer, MenuIndex *cell_index, void *context) {

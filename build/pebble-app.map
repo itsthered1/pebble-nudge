@@ -90,7 +90,6 @@ Discarded input sections
                 0x0000000000000000        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
  .text.app_comm_set_sniff_interval
                 0x0000000000000000        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
- .text.app_log  0x0000000000000000        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
  .text.app_message_deregister_callbacks
                 0x0000000000000000        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
  .text.app_message_open
@@ -1027,21 +1026,15 @@ Discarded input sections
                 0x0000000000000000        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
  .text.action_menu_get_root_level
                 0x0000000000000000        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
- .text.action_menu_item_get_action_data
-                0x0000000000000000        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
  .text.action_menu_item_get_label
                 0x0000000000000000        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
  .text.action_menu_set_result_window
                 0x0000000000000000        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
  .text.action_menu_unfreeze
                 0x0000000000000000        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
- .text.dictation_session_create
-                0x0000000000000000        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
  .text.dictation_session_destroy
                 0x0000000000000000        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
  .text.dictation_session_enable_confirmation
-                0x0000000000000000        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
- .text.dictation_session_start
                 0x0000000000000000        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
  .text.dictation_session_stop
                 0x0000000000000000        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
@@ -1207,151 +1200,168 @@ LOAD /home/claudio/pebble-dev/pebble-sdk-4.6-rc2-linux64/arm-cs-tools/bin/../lib
  .note.gnu.build-id
                 0x0000000000000084       0x24 linker stubs
 
-.text           0x00000000000000a8      0x3c7
+.text           0x00000000000000a8      0x444
  *(.text)
  .text          0x00000000000000a8       0x14 /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
  *(.text.*)
- .text.action_performed_callback
-                0x00000000000000bc        0x2 src/c/nudge.c.33.o
  .text.get_num_rows_callback
-                0x00000000000000be        0x4 src/c/nudge.c.33.o
+                0x00000000000000bc        0x4 src/c/nudge.c.33.o
  .text.get_cell_height_callback
-                0x00000000000000c2        0x4 src/c/nudge.c.33.o
- *fill*         0x00000000000000c6        0x2 
+                0x00000000000000c0        0x4 src/c/nudge.c.33.o
+ .text.dictation_session_callback
+                0x00000000000000c4       0x20 src/c/nudge.c.33.o
  .text.window_unload
-                0x00000000000000c8       0x28 src/c/nudge.c.33.o
+                0x00000000000000e4       0x28 src/c/nudge.c.33.o
  .text.window_load
-                0x00000000000000f0       0x9c src/c/nudge.c.33.o
+                0x000000000000010c       0x9c src/c/nudge.c.33.o
  .text.select_click_handler
-                0x000000000000018c       0x50 src/c/nudge.c.33.o
+                0x00000000000001a8       0x50 src/c/nudge.c.33.o
+ .text.action_performed_callback
+                0x00000000000001f8       0x40 src/c/nudge.c.33.o
  .text.draw_row_callback
-                0x00000000000001dc       0x60 src/c/nudge.c.33.o
+                0x0000000000000238       0x60 src/c/nudge.c.33.o
  .text.startup.main
-                0x000000000000023c       0xec src/c/nudge.c.33.o
-                0x000000000000023c                main
+                0x0000000000000298       0xd4 src/c/nudge.c.33.o
+                0x0000000000000298                main
  .text.app_event_loop
-                0x0000000000000328        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000328                app_event_loop
+                0x000000000000036c        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x000000000000036c                app_event_loop
+ .text.app_log  0x0000000000000378        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000378                app_log
  .text.layer_add_child
-                0x0000000000000334        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000334                layer_add_child
+                0x0000000000000384        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000384                layer_add_child
  .text.layer_get_bounds
-                0x0000000000000340        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000340                layer_get_bounds
- .text.memset   0x000000000000034c        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x000000000000034c                memset
+                0x0000000000000390        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000390                layer_get_bounds
+ .text.memset   0x000000000000039c        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x000000000000039c                memset
  .text.menu_cell_basic_draw
-                0x0000000000000358        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000358                menu_cell_basic_draw
+                0x00000000000003a8        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x00000000000003a8                menu_cell_basic_draw
  .text.menu_layer_destroy
-                0x0000000000000364        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000364                menu_layer_destroy
+                0x00000000000003b4        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x00000000000003b4                menu_layer_destroy
  .text.menu_layer_get_layer
-                0x0000000000000370        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000370                menu_layer_get_layer
+                0x00000000000003c0        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x00000000000003c0                menu_layer_get_layer
  .text.menu_layer_set_click_config_onto_window
-                0x000000000000037c        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x000000000000037c                menu_layer_set_click_config_onto_window
+                0x00000000000003cc        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x00000000000003cc                menu_layer_set_click_config_onto_window
  .text.window_create
-                0x0000000000000388        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000388                window_create
+                0x00000000000003d8        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x00000000000003d8                window_create
  .text.window_destroy
-                0x0000000000000394        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000394                window_destroy
+                0x00000000000003e4        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x00000000000003e4                window_destroy
  .text.window_get_root_layer
-                0x00000000000003a0        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000003a0                window_get_root_layer
+                0x00000000000003f0        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x00000000000003f0                window_get_root_layer
  .text.window_set_window_handlers
-                0x00000000000003ac        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000003ac                window_set_window_handlers
+                0x00000000000003fc        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x00000000000003fc                window_set_window_handlers
  .text.window_stack_push
-                0x00000000000003b8        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000003b8                window_stack_push
+                0x0000000000000408        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000408                window_stack_push
  .text.menu_layer_create
-                0x00000000000003c4        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000003c4                menu_layer_create
+                0x0000000000000414        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000414                menu_layer_create
  .text.menu_layer_set_callbacks
-                0x00000000000003d0        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000003d0                menu_layer_set_callbacks
+                0x0000000000000420        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000420                menu_layer_set_callbacks
  .text.action_menu_hierarchy_destroy
-                0x00000000000003dc        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000003dc                action_menu_hierarchy_destroy
+                0x000000000000042c        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x000000000000042c                action_menu_hierarchy_destroy
+ .text.action_menu_item_get_action_data
+                0x0000000000000438        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000438                action_menu_item_get_action_data
  .text.action_menu_level_add_action
-                0x00000000000003e8        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000003e8                action_menu_level_add_action
+                0x0000000000000444        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000444                action_menu_level_add_action
  .text.action_menu_level_add_child
-                0x00000000000003f4        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000003f4                action_menu_level_add_child
+                0x0000000000000450        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000450                action_menu_level_add_child
  .text.action_menu_level_create
-                0x0000000000000400        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000400                action_menu_level_create
+                0x000000000000045c        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x000000000000045c                action_menu_level_create
  .text.action_menu_level_set_display_mode
-                0x000000000000040c        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x000000000000040c                action_menu_level_set_display_mode
+                0x0000000000000468        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000468                action_menu_level_set_display_mode
  .text.action_menu_open
-                0x0000000000000418        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000418                action_menu_open
+                0x0000000000000474        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000474                action_menu_open
+ .text.dictation_session_create
+                0x0000000000000480        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000480                dictation_session_create
+ .text.dictation_session_start
+                0x000000000000048c        0xc /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x000000000000048c                dictation_session_start
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x0000000000000424       0x4b src/c/nudge.c.33.o
+                0x0000000000000498       0x54 src/c/nudge.c.33.o
 
-.glue_7         0x0000000000000470        0x0
+.glue_7         0x00000000000004ec        0x0
  .glue_7        0x0000000000000000        0x0 linker stubs
 
-.glue_7t        0x0000000000000470        0x0
+.glue_7t        0x00000000000004ec        0x0
  .glue_7t       0x0000000000000000        0x0 linker stubs
 
-.vfp11_veneer   0x0000000000000470        0x0
+.vfp11_veneer   0x00000000000004ec        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x0000000000000470        0x0
+.v4_bx          0x00000000000004ec        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x0000000000000470        0x0
+.iplt           0x00000000000004ec        0x0
  .iplt          0x0000000000000000        0x0 /home/claudio/pebble-dev/pebble-sdk-4.6-rc2-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.rel.dyn        0x0000000000000470        0x0
+.rel.dyn        0x00000000000004ec        0x0
  .rel.iplt      0x0000000000000000        0x0 /home/claudio/pebble-dev/pebble-sdk-4.6-rc2-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.data           0x0000000000000470      0x324
+.data           0x00000000000004ec      0x324
  *(.data)
- .data          0x0000000000000470        0x0 /home/claudio/pebble-dev/pebble-sdk-4.6-rc2-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
- .data          0x0000000000000470        0x4 /home/claudio/pebble-dev/pebble-sdk-4.6-rc2-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-                0x0000000000000470                __dso_handle
- .data          0x0000000000000474        0x0 src/c/nudge.c.33.o
- .data          0x0000000000000474        0x0 aplite/appinfo.auto.c.33.o
- .data          0x0000000000000474        0x0 aplite/src/resource_ids.auto.c.33.o
- .data          0x0000000000000474        0x0 src/message_keys.auto.c.33.o
- .data          0x0000000000000474        0x0 /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
- .data          0x0000000000000474        0x0 /home/claudio/pebble-dev/pebble-sdk-4.6-rc2-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
- .data          0x0000000000000474        0x0 /home/claudio/pebble-dev/pebble-sdk-4.6-rc2-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
+ .data          0x00000000000004ec        0x0 /home/claudio/pebble-dev/pebble-sdk-4.6-rc2-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
+ .data          0x00000000000004ec        0x4 /home/claudio/pebble-dev/pebble-sdk-4.6-rc2-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+                0x00000000000004ec                __dso_handle
+ .data          0x00000000000004f0        0x0 src/c/nudge.c.33.o
+ .data          0x00000000000004f0        0x0 aplite/appinfo.auto.c.33.o
+ .data          0x00000000000004f0        0x0 aplite/src/resource_ids.auto.c.33.o
+ .data          0x00000000000004f0        0x0 src/message_keys.auto.c.33.o
+ .data          0x00000000000004f0        0x0 /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+ .data          0x00000000000004f0        0x0 /home/claudio/pebble-dev/pebble-sdk-4.6-rc2-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
+ .data          0x00000000000004f0        0x0 /home/claudio/pebble-dev/pebble-sdk-4.6-rc2-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
  *(.data.*)
- .data.emojis   0x0000000000000474      0x320 src/c/nudge.c.33.o
+ .data.emojis   0x00000000000004f0      0x320 src/c/nudge.c.33.o
 
-.igot.plt       0x0000000000000794        0x0
+.igot.plt       0x0000000000000810        0x0
  .igot.plt      0x0000000000000000        0x0 /home/claudio/pebble-dev/pebble-sdk-4.6-rc2-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.bss            0x0000000000000794       0x14
+.bss            0x0000000000000810       0x1c
  *(.bss)
  *(.bss.*)
  .bss.s_emoji_layer
-                0x0000000000000794        0x4 src/c/nudge.c.33.o
+                0x0000000000000810        0x4 src/c/nudge.c.33.o
  .bss.s_action_menu
-                0x0000000000000798        0x4 src/c/nudge.c.33.o
+                0x0000000000000814        0x4 src/c/nudge.c.33.o
+ .bss.s_dictation_session
+                0x0000000000000818        0x4 src/c/nudge.c.33.o
  .bss.s_menu_layer
-                0x000000000000079c        0x4 src/c/nudge.c.33.o
+                0x000000000000081c        0x4 src/c/nudge.c.33.o
+ .bss.s_current_type
+                0x0000000000000820        0x1 src/c/nudge.c.33.o
+ *fill*         0x0000000000000821        0x3 
  .bss.s_main_window
-                0x00000000000007a0        0x4 src/c/nudge.c.33.o
+                0x0000000000000824        0x4 src/c/nudge.c.33.o
  .bss.s_root_level
-                0x00000000000007a4        0x4 src/c/nudge.c.33.o
+                0x0000000000000828        0x4 src/c/nudge.c.33.o
 
 DISCARD
  libc.a(*)
  libm.a(*)
  libgcc.a(*)
  *(.eh_frame)
-OUTPUT(/mnt/storage/Development/Projects/Pebble/pebble-nudge/build/aplite/pebble-app.elf elf32-littlearm)
+OUTPUT(/mnt/c/Users/Claudio/Desktop/nudge/build/aplite/pebble-app.elf elf32-littlearm)
 
 .ARM.attributes
                 0x0000000000000000       0x27
@@ -1383,49 +1393,49 @@ OUTPUT(/mnt/storage/Development/Projects/Pebble/pebble-nudge/build/aplite/pebble
  .comment       0x0000000000000000       0x4f src/message_keys.auto.c.33.o
  .comment       0x0000000000000000       0x4f /home/claudio/pebble-dev/pebble-sdk-4.6-rc2-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
 
-.debug_info     0x0000000000000000     0x12e9
- .debug_info    0x0000000000000000      0xeea src/c/nudge.c.33.o
- .debug_info    0x0000000000000eea      0x31a aplite/appinfo.auto.c.33.o
- .debug_info    0x0000000000001204       0x64 aplite/src/resource_ids.auto.c.33.o
- .debug_info    0x0000000000001268       0x81 src/message_keys.auto.c.33.o
+.debug_info     0x0000000000000000     0x1554
+ .debug_info    0x0000000000000000     0x1155 src/c/nudge.c.33.o
+ .debug_info    0x0000000000001155      0x31a aplite/appinfo.auto.c.33.o
+ .debug_info    0x000000000000146f       0x64 aplite/src/resource_ids.auto.c.33.o
+ .debug_info    0x00000000000014d3       0x81 src/message_keys.auto.c.33.o
 
-.debug_abbrev   0x0000000000000000      0x428
- .debug_abbrev  0x0000000000000000      0x320 src/c/nudge.c.33.o
- .debug_abbrev  0x0000000000000320       0x9e aplite/appinfo.auto.c.33.o
- .debug_abbrev  0x00000000000003be       0x26 aplite/src/resource_ids.auto.c.33.o
- .debug_abbrev  0x00000000000003e4       0x44 src/message_keys.auto.c.33.o
+.debug_abbrev   0x0000000000000000      0x44d
+ .debug_abbrev  0x0000000000000000      0x345 src/c/nudge.c.33.o
+ .debug_abbrev  0x0000000000000345       0x9e aplite/appinfo.auto.c.33.o
+ .debug_abbrev  0x00000000000003e3       0x26 aplite/src/resource_ids.auto.c.33.o
+ .debug_abbrev  0x0000000000000409       0x44 src/message_keys.auto.c.33.o
 
-.debug_loc      0x0000000000000000      0x277
- .debug_loc     0x0000000000000000      0x277 src/c/nudge.c.33.o
+.debug_loc      0x0000000000000000      0x39e
+ .debug_loc     0x0000000000000000      0x39e src/c/nudge.c.33.o
 
-.debug_aranges  0x0000000000000000       0xa0
+.debug_aranges  0x0000000000000000       0xa8
  .debug_aranges
-                0x0000000000000000       0x58 src/c/nudge.c.33.o
+                0x0000000000000000       0x60 src/c/nudge.c.33.o
  .debug_aranges
-                0x0000000000000058       0x18 aplite/appinfo.auto.c.33.o
+                0x0000000000000060       0x18 aplite/appinfo.auto.c.33.o
  .debug_aranges
-                0x0000000000000070       0x18 aplite/src/resource_ids.auto.c.33.o
+                0x0000000000000078       0x18 aplite/src/resource_ids.auto.c.33.o
  .debug_aranges
-                0x0000000000000088       0x18 src/message_keys.auto.c.33.o
+                0x0000000000000090       0x18 src/message_keys.auto.c.33.o
 
-.debug_ranges   0x0000000000000000       0x78
- .debug_ranges  0x0000000000000000       0x78 src/c/nudge.c.33.o
+.debug_ranges   0x0000000000000000       0xb8
+ .debug_ranges  0x0000000000000000       0xb8 src/c/nudge.c.33.o
 
-.debug_line     0x0000000000000000      0x3fb
- .debug_line    0x0000000000000000      0x1ed src/c/nudge.c.33.o
- .debug_line    0x00000000000001ed      0x127 aplite/appinfo.auto.c.33.o
- .debug_line    0x0000000000000314       0x1d aplite/src/resource_ids.auto.c.33.o
- .debug_line    0x0000000000000331       0xca src/message_keys.auto.c.33.o
+.debug_line     0x0000000000000000      0x40e
+ .debug_line    0x0000000000000000      0x200 src/c/nudge.c.33.o
+ .debug_line    0x0000000000000200      0x127 aplite/appinfo.auto.c.33.o
+ .debug_line    0x0000000000000327       0x1d aplite/src/resource_ids.auto.c.33.o
+ .debug_line    0x0000000000000344       0xca src/message_keys.auto.c.33.o
 
-.debug_str      0x0000000000000000      0xa7d
- .debug_str     0x0000000000000000      0x7fc src/c/nudge.c.33.o
-                                        0x8a2 (size before relaxing)
- .debug_str     0x00000000000007fc      0x238 aplite/appinfo.auto.c.33.o
-                                        0x32a (size before relaxing)
- .debug_str     0x0000000000000a34       0x1f aplite/src/resource_ids.auto.c.33.o
-                                         0xeb (size before relaxing)
- .debug_str     0x0000000000000a53       0x2a src/message_keys.auto.c.33.o
-                                         0xff (size before relaxing)
+.debug_str      0x0000000000000000      0xda5
+ .debug_str     0x0000000000000000      0xb2d src/c/nudge.c.33.o
+                                        0xbe0 (size before relaxing)
+ .debug_str     0x0000000000000b2d      0x22f aplite/appinfo.auto.c.33.o
+                                        0x317 (size before relaxing)
+ .debug_str     0x0000000000000d5c       0x1f aplite/src/resource_ids.auto.c.33.o
+                                         0xd8 (size before relaxing)
+ .debug_str     0x0000000000000d7b       0x2a src/message_keys.auto.c.33.o
+                                         0xec (size before relaxing)
 
-.debug_frame    0x0000000000000000       0xe0
- .debug_frame   0x0000000000000000       0xe0 src/c/nudge.c.33.o
+.debug_frame    0x0000000000000000      0x104
+ .debug_frame   0x0000000000000000      0x104 src/c/nudge.c.33.o
