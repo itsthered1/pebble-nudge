@@ -134,7 +134,7 @@ static void init_action_menu() {
     action_menu_level_add_action(s_emoji_layer, emojis[i], action_performed_callback, (void *)MessageTypeEmoji);
   }
 
-  action_menu_level_add_action(s_root_level, "Canned", action_performed_callback, (void *)MessageTypeCanned);
+  action_menu_level_add_action(s_root_level, "Text", action_performed_callback, (void *)MessageTypeCanned);
   
 #if defined(PBL_MICROPHONE)
   action_menu_level_add_action(s_root_level, "Voice", action_performed_callback, (void *)MessageTypeVoice);
