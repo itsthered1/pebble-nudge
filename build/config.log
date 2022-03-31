@@ -1,13 +1,13 @@
-# project  configured on Wed Mar 30 13:58:28 2022 by
+# project  configured on Wed Mar 30 20:56:35 2022 by
 # waf 1.7.11 (abi 98, python 20712f0 on linux2)
 # using /home/claudio/.pebble-sdk/SDKs/current/sdk-core/pebble/waf configure
 #
 ----------------------------------------
 Setting top to
-/mnt/c/Users/Claudio/Desktop/nudge
+/mnt/storage/Development/Projects/Pebble/pebble-nudge
 ----------------------------------------
 Setting out to
-/mnt/c/Users/Claudio/Desktop/nudge/build
+/mnt/storage/Development/Projects/Pebble/pebble-nudge/build
 ----------------------------------------
 Checking for program webpack
 /home/claudio/.pebble-sdk/SDKs/current/node_modules/.bin/webpack

@@ -5,7 +5,91 @@
 static Window *s_main_window;
 static MenuLayer *s_menu_layer;
 static ActionMenu *s_action_menu;
-static ActionMenuLevel *s_root_level;
+static ActionMenuLevel *s_root_level, *s_emoji_layer;
+
+
+static char emojis[80][10] = {
+  "\U0001F601",
+  "\U0001F602",
+  "\U0001F603",
+  "\U0001F604",
+  "\U0001F605",
+  "\U0001F606",
+  "\U0001F609",
+  "\U0001F60A",
+  "\U0001F60B",
+  "\U0001F60C",
+  "\U0001F60D",
+  "\U0001F60F",
+  "\U0001F612",
+  "\U0001F613",
+  "\U0001F614",
+  "\U0001F616",
+  "\U0001F618",
+  "\U0001F61A",
+  "\U0001F61C",
+  "\U0000263A",
+  "\U0001F607",
+  "\U0001F608",
+  "\U0001F60E",
+  "\U0001F610",
+  "\U0001F611",
+  "\U0001F615",
+  "\U0001F617",
+  "\U0001F619",
+  "\U0001F61B",
+  "\U0001F61F",
+  "\U0001F626",
+  "\U0001F627",
+  "\U0001F62C",
+  "\U0001F62E",
+  "\U0001F62F",
+  "\U0001F634",
+  "\U0001F636",
+  "\U0001F425",
+  "\U00002764",
+  "\U0001F493",
+  "\U0001F61D",
+  "\U0001F61E",
+  "\U0001F620",
+  "\U0001F621",
+  "\U0001F622",
+  "\U0001F623",
+  "\U0001F624",
+  "\U0001F625",
+  "\U0001F628",
+  "\U0001F629",
+  "\U0001F62A",
+  "\U0001F62B",
+  "\U0001F630",
+  "\U0001F631",
+  "\U0001F632",
+  "\U0001F633",
+  "\U0001F635",
+  "\U0001F637",
+  "\U0001F600",
+  "\U0001F494",
+  "\U0001F495",
+  "\U0001F496",
+  "\U0001F497",
+  "\U0001F498",
+  "\U0001F499",
+  "\U0001F49A",
+  "\U0001F49B",
+  "\U0001F49C",
+  "\U0001F49D",
+  "\U0001F49E",
+  "\U0001F49F",
+  "\U0001F37A",
+  "\U0001F37B",
+  "\U0001F389",
+  "\U0000270B",
+  "\U0000270C",
+  "\U0001F44D",
+  "\U0001F44E",
+  "\U0001F64F",
+  "\U0001F4A9"
+};
 
 static void action_performed_callback(ActionMenu *action_menu, const ActionMenuItem *action, void *context) {
   //what
@@ -14,9 +98,15 @@ static void action_performed_callback(ActionMenu *action_menu, const ActionMenuI
 static void init_action_menu() {
   s_root_level = action_menu_level_create(3);
 
-  action_menu_level_add_action(s_root_level, "Emoji", action_performed_callback, NULL);
+  action_menu_level_add_action(s_root_level, "Emojis", action_performed_callback, NULL);
   action_menu_level_add_action(s_root_level, "Canned", action_performed_callback, NULL);
   action_menu_level_add_action(s_root_level, "Voice", action_performed_callback, NULL);
+
+  s_emoji_layer = action_menu_level_create(80);
+  action_menu_level_add_child(s_root_level, s_emoji_layer, "Emoji Select");
+  for (int i = 0; i < 80; i++) {
+    action_menu_level_add_action(s_emoji_layer, emojis[i], action_performed_callback, NULL);
+  }
 }
 
 static void select_click_handler(struct MenuLayer *menu_layer, MenuIndex *cell_index, void *context) {
@@ -26,20 +116,14 @@ static void select_click_handler(struct MenuLayer *menu_layer, MenuIndex *cell_i
       .background = PBL_IF_COLOR_ELSE(GColorRed, GColorWhite),
       .foreground = GColorBlack,
     },
-    .align = ActionMenuAlignCenter
+    .align = ActionMenuAlignTop,
   };
+
+  action_menu_level_set_display_mode(s_root_level, ActionMenuLevelDisplayModeWide);
+  action_menu_level_set_display_mode(s_emoji_layer, ActionMenuLevelDisplayModeThin);
   
-  switch (cell_index->row) {
-    case 0:
-      s_action_menu = action_menu_open(&config);
-      break;
-    case 1:
-      s_action_menu = action_menu_open(&config);
-      break;
-    case 2:
-      s_action_menu = action_menu_open(&config);
-      break;
-  }
+  
+  s_action_menu = action_menu_open(&config);
 }
 
 static uint16_t get_num_rows_callback(MenuLayer *menu_layer, uint16_t section_index, void *data) {
@@ -47,7 +131,7 @@ static uint16_t get_num_rows_callback(MenuLayer *menu_layer, uint16_t section_in
 }
 
 static void draw_row_callback(GContext *ctx, const Layer *cell_layer, MenuIndex *cell_index, void *context) {
-  // Determine which section we're going to draw in
+  // Determine which section we"re going to draw in
   switch (cell_index->row) {
     case 0:
       // This is the first cell, which we use to give the user some basic instructions
